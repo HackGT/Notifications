@@ -61,16 +61,37 @@
     .card {
         display: block;
         margin-top: 125px;
-        background: gray;
-        height: 200px;
-        width: 200px;
+        background: #ecf8ff;
+        height: 150px;
+        width: 300px;
         margin-left: auto;
         margin-right: auto;
-        border: 5px solid gray;
-        outline: 2px solid #ffffff;
+        border: 10px solid #ffffff;
         -webkit-box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.3);
         -moz-box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.3);
         box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.3);
+    }
+
+    .card h1 {
+        font-family: "Advent Pro", sans-serif;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .card p {
+        font-family: "Lato";
+        padding: 10px;
+        color: black;
+        font-size: 1em;
+    }
+
+    .card #timestamp {
+        display: block;
+        bottom: 0;
+        right: 0;
+        font-size: 0.85em;
+        color: gray;
+        text-align: right;
     }
 }
 
