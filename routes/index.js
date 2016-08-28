@@ -8,11 +8,18 @@ router.get('/', function(req, res, next) {
 
 router.get('/notifications', function(req, res, next) {
   res.json(
-    {
-      title: "Food is ready",
-      description: "Cape Pies is available at the food table",
-      time: new Date()
-    }
+    [
+      {
+        title: "Food is ready",
+        description: "Cape Pies is available at the food table",
+        time: new Date()
+      },
+      {
+        title: "Food is on fire",
+        description: "Run",
+        time: new Date()
+      }
+    ]
   );
 });
 
