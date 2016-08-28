@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "NotifyGT",
+  "description": "Push Notications to all HackGT Hackers",
+  "version": "1.0",
+
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+
+  "browser_action": {
+    "default_icon": "res/favicon.png"
+    // "default_popup": "res/popup.html"
+  },
+
+  "background": {
+    "persistent": false, 
+    "scripts": ["background.js"]
+  },
+
+  "permissions": [
+    "activeTab",
+    "notifications",
+    "tabs",
+    "storage",
+    "https://ajax.googleapis.com/"
+  ]
+}
