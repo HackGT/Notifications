@@ -1,0 +1,14 @@
+{
+  "name": "Notifications",
+  "version": "0.0.1",
+  "homepage": "https://github.com/HackGT/Notifications",
+  "authors": [
+    "michelle-chiu <michellechiu96@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.5.8",
+    "bootstrap": "~3.3.7"
+  }
+}
