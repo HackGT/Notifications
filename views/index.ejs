@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="notif">
   <head>
-    <title><%= title %></title>
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>HackGT Notifications Page</title>
+    <meta name="description" content="">
+    <meta name="author" content="Michelle Chiu">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro:400,600|Lato" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- JavaScript/JQuery
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <body ng-controller="AppController">
+     <!--
+     <div>
+      <img src="assets/tree.png" id="tree">
+    </div>
+    -->
+    <h1>{{greeting}}</h1>
+    <button ng-click="fetch">Fetch</button>
+    <div class="title">
+        <img src="assets/logo.png" id="logo">
+        <h1 id="title-heading">Hack<strong>GT</strong> Notifications</h1>
+    </div>
+    <div class="notifications">
+        <div class="card">
+        </div>
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="/javascripts/main.js"></script>
   </body>
 </html>
