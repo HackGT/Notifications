@@ -32,14 +32,14 @@
         <!-- <img src="assets/logo.png" id="logo"> -->
         <h1 id="title-heading">Hack<strong>GT</strong> Notifications</h1>
     </div>
-    <div class="notifications">
+    <div class="notifications" ng-repeat="notif in notifs">
         <div class="card">
-            <h1>Sample Title</h1>
-            <p>Sample description here.</p>
-            <p id="timestamp">15 minutes ago</p>
+            <h1>{{notif.title}}</h1>
+            <p>{{notif.description}}</p>
+            <p id="timestamp">{{notif.date}}</p>
         </div>
     </div>
-    <!-- <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script> -->
+
     <script src="/build/angulars.min.js"></script>
     <script src="/build/app.min.js"></script>
     <script src="/build/ui.min.js"></script>

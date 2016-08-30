@@ -1,18 +1,22 @@
 var app = angular.module('notif', []);
 
-app.controller('AppController', ['$scope', "$http", function($scope, $http) {
-  $scope.fetch = function() {
-      $http.get('/notifications',
-      function(res) {
-          $scope.greeting = res;
-      },
-      function(err) {
+app.controller('AppController', function($scope, $http, $timeout) {
+  var getNotifications = function() {
+    $http.get('/api/notifications', {})
+      .then(
+        function(res) {
+          $scope.notifs = res.data;
+        },
+        function(err) {
           console.error(err);
-      }
-    );
-    }
-
-}]);
+        }
+      );
+      $timeout(function(){
+        getNotifications();
+      },5000);
+  };
+  getNotifications();
+});
 
 app.controller('ConsoleController', ['$scope', function($scope) {
   $scope.title =  "Notifications Console";
