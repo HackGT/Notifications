@@ -13,3 +13,7 @@ app.controller('AppController', ['$scope', "$http", function($scope, $http) {
     }
 
 }]);
+
+app.controller('ConsoleController', ['$scope', function($scope) {
+  $scope.title =  "Notifications Console";
+}]);
