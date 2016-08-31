@@ -26,6 +26,7 @@ app.controller('ConsoleController', function($scope, $http) {
       .then(
         function(res) {
           alert('Notification has been sent to the people!');
+          $scope.notif = {};
         },
         function(err) {
           console.error('Error, check console');
