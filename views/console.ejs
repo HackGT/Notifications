@@ -16,6 +16,21 @@
 
   <h1>{{title}}</h1>
 
+  <form ng-submit=submit()>
+    <label>Title: <input type="text" ng-model="notif.title" required></label>
+    <label>Description<input type="text" ng-model="notif.description" required></label>
+    <select class="" name="type" ng-model="notif.type" required>
+      <option value="">---Please select---</option>
+      <option value="GENERAL">GENERAL</option>
+      <option value="FOOD">FOOD</option>
+      <option value="EVENT">EVENT</option>
+      <option value="EMERGENCY">EMERGENCY</option>
+    </select>
+    <input type="submit">
+  </form>
+
+  <a href="/logout">Logout</a>
+
   <script src="/build/angulars.min.js"></script>
   <script src="/build/app.min.js"></script>
   <script src="/build/ui.min.js"></script>

@@ -18,6 +18,33 @@ app.controller('AppController', function($scope, $http, $timeout) {
   getNotifications();
 });
 
-app.controller('ConsoleController', ['$scope', function($scope) {
+app.controller('ConsoleController', function($scope, $http) {
   $scope.title =  "Notifications Console";
-}]);
+  $scope.submit = function() {
+    console.log($scope.notif);
+    $http.post('/api/notifications', $scope.notif)
+      .then(
+        function(res) {
+          alert('Notification has been sent to the people!');
+        },
+        function(err) {
+          console.error('Error, check console');
+        }
+      );
+  };
+});
+
+app.controller('LoginController', function($scope, $http, $window) {
+  $scope.submit = function() {
+      $http.post('/api/login', $scope.user)
+        .then(
+          function(res) {
+            console.log('Successful login');
+            $window.location.href = '/console';
+          },
+          function(err) {
+            console.error(err);
+          }
+        );
+  };
+});
