@@ -1,5 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var request = require('superagent');
+
+var config = require('../config.json');
+
 
 var AuthService = require('../services/AuthService');
 
@@ -26,6 +30,8 @@ router.post('/notifications', function(req, res) {
     if (err) {
       res.send(400, err);
     } else {
+      sendPush(notif);
+      sendTexts(notif, req.session.token);
       res.json(notif);
     }
   });
@@ -43,5 +49,33 @@ router.post('/login', function(req, res, next) {
       res.error(err);
     });
 });
+
+var sendPush = function(notif) {
+  request.post('https://onesignal.com/api/v1/notifications')
+  .send({
+    "app_id": config.onesignalAppID,
+    "included_segments": ["All"],
+    "headings": {"en": notif.title},
+    "contents": {"en": notif.description}
+  })
+  .set('Content-Type', 'application/json')
+  .set('Authorization', config.onesignalAPIKey)
+  .end(function(err, response) {
+    if (err || !response) {
+      console.error(err);
+    } else {
+      console.log(response.body);
+    }
+  });
+}
+
+var sendTexts = function(notif, token) {
+  request.get('https://apply.hackgt.com/api/contact/sms')
+  .set('Content-Type', 'application/json')
+  .set('x-access-token', token)
+  .end(function(err, response) {
+    console.log(response.body);
+  });
+}
 
 module.exports = router;

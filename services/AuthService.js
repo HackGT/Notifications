@@ -15,7 +15,6 @@ AuthService.login = function(email, password) {
         if (err || !response) {
           reject(err || {message: 'no response'});
         } else {
-          console.log(response.body.token);
           resolver(response.body.token);
         }
       });

@@ -1,3 +1,5 @@
 {
-  "secret": "InsertSecretHere"
+  "secret": "hackgtissuperawesome",
+  "onesignalAPIKey": "Basic APIKEY",
+  "onesignalAppID": "AppID"
 }
