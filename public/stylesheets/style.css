@@ -66,7 +66,10 @@
         width: 300px;
         margin-left: auto;
         margin-right: auto;
-        border: 10px solid #ffffff;
+        border-left: 10px solid #ffffff;
+        border-top: 10px solid #ffffff;
+        border-right: 10px solid #ffffff;
+        border-bottom: 30px solid #ffffff;
         -webkit-box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.3);
         -moz-box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.3);
         box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.3);
@@ -81,18 +84,22 @@
     .card p {
         font-family: "Lato";
         padding: 10px;
-        color: black;
+        color: gray;
         font-size: 1em;
     }
 
     .card #timestamp {
+        position: relative;
         display: block;
-        bottom: 0;
+        bottom: -0.3em;
         right: 0;
         font-size: 0.85em;
-        color: gray;
+        color: #123d58;
         text-align: right;
+        margin: 0;
+        padding: 5px;
     }
+
 }
 
 /*-------------------------- Tablets, Desktop -------------------------*/
