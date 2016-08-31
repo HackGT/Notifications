@@ -9,6 +9,8 @@ var AuthService = require('../services/AuthService');
 
 var Notification = require('../models/Notification.js');
 
+var twilioClient = require('twilio')(config.twilioAccountSid, config.twilioAuthToken);
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -74,7 +76,22 @@ var sendTexts = function(notif, token) {
   .set('Content-Type', 'application/json')
   .set('x-access-token', token)
   .end(function(err, response) {
-    console.log(response.body);
+    response.body.forEach(function(user) {
+      var options = {
+        to: user.confirmation.phoneNumber,
+        from: config.notificationPhoneNumber,
+        body: "[HackGT] " + notif.title + " - " + notif.description
+      };
+
+      twilioClient.sendMessage(options, function(err, twilioResponse) {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log(twilioResponse);
+        }
+      });
+
+    });
   });
 }
 

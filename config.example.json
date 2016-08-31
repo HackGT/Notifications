@@ -1,5 +1,8 @@
 {
   "secret": "hackgtissuperawesome",
   "onesignalAPIKey": "Basic APIKEY",
-  "onesignalAppID": "AppID"
+  "onesignalAppID": "AppID",
+  "twilioAccountSid": "twilioAccountSid",
+  "twilioAuthToken": "twilioAuthToken",
+  "notificationPhoneNumber": 1234567890
 }

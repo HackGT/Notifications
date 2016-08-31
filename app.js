@@ -14,7 +14,7 @@ var api = require('./routes/api');
 var app = express();
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/hackgt', function(err) {
+mongoose.connect('mongodb://localhost/hackgtnotifs', function(err) {
   if (err) {
     console.error(err);
     throw new Error("MongoDB Connection Failed");
