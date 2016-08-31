@@ -23,15 +23,13 @@
   </head>
   <body ng-controller="AppController">
     <div class="title">
-         <img src="assets/logo.png" id="logo">
-        <h1 id="title-heading">Hack<strong>GT</strong> Notifications</h1>
+        <img src="assets/logo.png" id="logo">
+        <h1>Hack<strong>GT</strong></h1>
     </div>
     <div class="notifications">
         <div class="card" ng-repeat="notif in notifs">
-            <h1 id="card-title">
-              <img src="assets/{{notif.type}}.svg" width="30" height="30">
-              {{notif.title}}
-            </h1>
+            <img src="assets/{{notif.type}}.svg">
+            <h1 id="card-title">{{notif.title}}</h1>
             <p>{{notif.description}}</p>
             <p id="timestamp">{{notif.date | date:'shortTime'}}</p>
         </div>
