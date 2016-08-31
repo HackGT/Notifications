@@ -22,12 +22,6 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   </head>
   <body ng-controller="AppController">
-     <!--
-     <div>
-      <img src="assets/tree.png" id="tree">
-    </div>
-    -->
-    <h1>{{greeting}}</h1>
     <div class="title">
          <img src="assets/logo.png" id="logo">
         <h1 id="title-heading">Hack<strong>GT</strong> Notifications</h1>
@@ -39,7 +33,7 @@
               {{notif.title}}
             </h1>
             <p>{{notif.description}}</p>
-            <p id="timestamp">{{notif.date}} ago</p>
+            <p id="timestamp">{{notif.date | date:'shortTime'}}</p>
         </div>
     </div>
 
