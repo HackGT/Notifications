@@ -14,6 +14,7 @@
       background-repeat: no-repeat;
       height: 100%;
       width: 100%;
+      background-attachment: fixed;
     }
 
     a {
@@ -59,20 +60,20 @@
     }
 
     .notifications {
-      margin-top: 125px;
+      margin-top: 8em;
     }
 
     .card {
         margin-bottom: 2em;
         display: block;
-        background: #ecf8ff;
-        height: 200px;
+        background-image: url("../assets/watercolor.png");
+        height: 175px;
         width: 325px;
         margin-left: auto;
         margin-right: auto;
-        border-left: 10px solid #ffffff;
-        border-top: 10px solid #ffffff;
-        border-right: 10px solid #ffffff;
+        border-left: 5px solid #ffffff;
+        border-top: 5px solid #ffffff;
+        border-right: 5px solid #ffffff;
         border-bottom: 30px solid #ffffff;
         -webkit-box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.3);
         -moz-box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.3);
@@ -95,7 +96,7 @@
     .card #timestamp {
         position: relative;
         display: block;
-        bottom: -4.6em;
+        bottom: -3em;
         right: 0;
         font-size: 0.85em;
         color: #123d58;
