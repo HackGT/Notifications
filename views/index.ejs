@@ -32,8 +32,8 @@
          <img src="assets/logo.png" id="logo">
         <h1 id="title-heading">Hack<strong>GT</strong> Notifications</h1>
     </div>
-    <div class="notifications" ng-repeat="notif in notifs">
-        <div class="card">
+    <div class="notifications">
+        <div class="card" ng-repeat="notif in notifs">
             <h1 id="card-title">
               <img src="assets/{{notif.type}}.svg" width="30" height="30">
               {{notif.title}}
