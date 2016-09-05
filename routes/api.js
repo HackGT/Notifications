@@ -13,7 +13,9 @@ var twilioClient = require('twilio')(config.twilioAccountSid, config.twilioAuthT
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.json({
+    message: 'API controller for notifications app'
+  });
 });
 
 router.get('/notifications', function(req, res) {
@@ -45,7 +47,7 @@ router.post('/login', function(req, res, next) {
   AuthService.login(email, password)
     .then(function(token) {
       req.session.token = token;
-      res.redirect('/console');
+      res.send(200);
     })
     .catch(function(err) {
       res.error(err);

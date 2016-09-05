@@ -1,26 +1,22 @@
 var express = require('express');
 var router = express.Router();
 var request = require('superagent');
+var path = require('path');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-router.get('/console', function(req, res, next) {
   if (req.session.token) {
-    res.render('console', {});
+    res.sendFile(path.join(__dirname + '/../views/home.html'));
   } else {
+    console.log("Not logged in");
     res.redirect('/login');
   }
 });
 
 router.get('/login', function(req, res, next) {
   if (req.session.token) {
-    res.redirect('/console', {});
+    res.redirect('/', {});
   } else {
-    res.render('login', {});
-  }
+    res.sendFile(path.join(__dirname + '/../views/login.html'));  }
 });
 
 router.get('/logout', function(req, res, next) {

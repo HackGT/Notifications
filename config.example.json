@@ -4,5 +4,6 @@
   "onesignalAppID": "AppID",
   "twilioAccountSid": "twilioAccountSid",
   "twilioAuthToken": "twilioAuthToken",
-  "notificationPhoneNumber": 1234567890
+  "notificationPhoneNumber": 1234567890,
+  "PORT": 3000
 }

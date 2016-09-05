@@ -19,7 +19,10 @@ app.controller('AppController', function($scope, $http, $timeout) {
 });
 
 app.controller('ConsoleController', function($scope, $http) {
-  $scope.title =  "Notifications Console";
+  $scope.notif = {
+    type: "GENERAL"
+  }
+
   $scope.submit = function() {
     console.log($scope.notif);
     $http.post('/api/notifications', $scope.notif)
@@ -41,7 +44,7 @@ app.controller('LoginController', function($scope, $http, $window) {
         .then(
           function(res) {
             console.log('Successful login');
-            $window.location.href = '/console';
+            $window.location.href = '/';
           },
           function(err) {
             console.error(err);

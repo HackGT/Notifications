@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="notif">
+<head>
+  <meta charset="UTF-8">
+  <title>Notifications Console</title>
+  <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Advent+Pro:400,600|Lato" rel="stylesheet">
+  <link rel="stylesheet" href="/build/ui.min.css">
+  <link rel='stylesheet' href='/build/app.min.css' />
+
+  <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+</head>
+<body ng-controller="ConsoleController">
+
+  <h1>Shoutout To The People</h1>
+
+  <form ng-submit=submit()>
+
+    <div class="form-group">
+      <label>Title: </label>
+      <input type="text" class="form-control" ng-model="notif.title" required>
+    </div>
+
+    <div class="form-group">
+      <label>Description: </label>
+      <textarea type="text" class="form-control" rows="4" ng-model="notif.description" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="radio-inline">
+        <input type="radio" ng-model="notif.type" value="GENERAL"> General
+      </label>
+      <label class="radio-inline">
+        <input type="radio" ng-model="notif.type" value="FOOD"> Food
+      </label>
+      <label class="radio-inline">
+        <input type="radio" ng-model="notif.type" value="EVENT"> Event
+      </label>
+      <label class="radio-inline">
+        <input type="radio" ng-model="notif.type" value="EMERGENCY"> Emergency
+      </label>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Send!</button>
+  </form>
+
+  <div class="form-group" style="margin-top:100px;">
+    <a href="/logout" class="btn btn-default">Logout</a>
+  </div>
+
+  <script src="/build/angulars.min.js"></script>
+  <script src="/build/app.min.js"></script>
+  <script src="/build/ui.min.js"></script>
+</body>
+</html>
