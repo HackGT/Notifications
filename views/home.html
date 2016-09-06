@@ -2,6 +2,7 @@
 <html lang="en" ng-app="notif">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Notifications Console</title>
   <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="https://fonts.googleapis.com/css?family=Advent+Pro:400,600|Lato" rel="stylesheet">
@@ -14,38 +15,53 @@
 </head>
 <body ng-controller="ConsoleController">
 
-  <h1>Shoutout To The People</h1>
+  <div class="container jumbotron" style="text-align:center;background-color:rgba(238, 238, 238, 0.7);">
+    <div class="col-md-12">
+      <h1>Shoutout To The People</h1>
+    </div>
+  </div>
 
-  <form ng-submit=submit()>
+  <div class="container">
 
-    <div class="form-group">
-      <label>Title: </label>
-      <input type="text" class="form-control" ng-model="notif.title" required>
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+      <form ng-submit=submit()>
+
+        <div class="form-group">
+          <label>Title: </label>
+          <input type="text" class="form-control" placeholder="Title of notification" ng-model="notif.title" required>
+        </div>
+
+        <div class="form-group">
+          <label>Description: </label>
+          <textarea type="text" class="form-control" rows="4" placeholder="Description" ng-model="notif.description" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="radio-inline">
+            <input type="radio" ng-model="notif.type" value="GENERAL"> General
+          </label>
+          <label class="radio-inline">
+            <input type="radio" ng-model="notif.type" value="FOOD"> Food
+          </label>
+          <label class="radio-inline">
+            <input type="radio" ng-model="notif.type" value="EVENT"> Event
+          </label>
+          <label class="radio-inline">
+            <input type="radio" ng-model="notif.type" value="EMERGENCY"> Emergency
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send!</button>
+
+      </form>
     </div>
 
-    <div class="form-group">
-      <label>Description: </label>
-      <textarea type="text" class="form-control" rows="4" ng-model="notif.description" required></textarea>
-    </div>
+    <div class="col-md-2"></div>
 
-    <div class="form-group">
-      <label class="radio-inline">
-        <input type="radio" ng-model="notif.type" value="GENERAL"> General
-      </label>
-      <label class="radio-inline">
-        <input type="radio" ng-model="notif.type" value="FOOD"> Food
-      </label>
-      <label class="radio-inline">
-        <input type="radio" ng-model="notif.type" value="EVENT"> Event
-      </label>
-      <label class="radio-inline">
-        <input type="radio" ng-model="notif.type" value="EMERGENCY"> Emergency
-      </label>
-    </div>
+  </div>
 
-
-    <button type="submit" class="btn btn-primary">Send!</button>
-  </form>
 
   <div class="form-group" style="margin-top:100px;">
     <a href="/logout" class="btn btn-default">Logout</a>

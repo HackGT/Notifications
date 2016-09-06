@@ -2,6 +2,7 @@
 <html lang="en" ng-app="notif">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Login Page</title>
 
   <!-- CSS
@@ -15,24 +16,40 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body ng-controller="LoginController">
-  <h1>Login Page</h1>
-  <h2>Login With Your Admin Account To Send A Notification</h2>
-  <h3>(The one from <a href="https://apply.hackgt.com">https://apply.hackgt.com</a>)</h3>
 
-  <form ng-submit="submit()">
+  <div class="container jumbotron" style="text-align:center;background-color:rgba(238, 238, 238, 0.7);">
+    <div class="col-md-12">
+      <h1>Login Page</h1>
+      <h2>Login With Your Admin Account To Send A Notification</h2>
+      <h3>(The one from <a href="https://apply.hackgt.com">https://apply.hackgt.com</a>)</h3>
+    </div>
+  </div>
 
-    <div class="form-group">
-      <label>Email: </label>
-      <input type="email" class="form-control" ng-model="user.email" required>
+
+  <div class="container">
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+      <form ng-submit="submit()">
+
+        <div class="form-group">
+          <label>Email: </label>
+          <input type="email" class="form-control" ng-model="user.email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Password: </label>
+          <input type="password" class="form-control" ng-model="user.password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login!</button>
+      </form>
     </div>
 
-    <div class="form-group">
-      <label>Password: </label>
-      <input type="password" class="form-control" ng-model="user.password" required>
-    </div>
+    <div class="col-md-2"></div>
 
-    <button type="submit" class="btn btn-primary">Login!</button>
-  </form>
+  </div>
+
 
 
   <script src="/build/angulars.min.js"></script>
