@@ -28,6 +28,16 @@ router.get('/notifications', function(req, res) {
   });
 });
 
+router.get('/notifications/recent', function(req, res) {
+  Notification.findOne({}).sort({date: 'descending'}).exec(function(err, notifs) {
+      if (err) {
+        res.send(400, err);
+      } else {
+        res.json(notifs);
+      }
+  });
+});
+
 router.post('/notifications', function(req, res) {
   var newNotif = new Notification(req.body);
   newNotif.save(function(err, notif) {
